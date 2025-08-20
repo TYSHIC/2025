@@ -1,0 +1,222 @@
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Source Code Pro", monospace;
+    background-color: #191724;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    80% {
+        transform: scale(0.95);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: row;
+    padding: 2rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.home-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.typewriter-container {
+    margin-bottom: 1.5rem;
+}
+
+.home-text p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #dfdad9;
+}
+
+#typewriter {
+    font: bold 5rem "Source Code Pro", monospace;
+    color: white;
+    white-space: nowrap;
+    margin: 0;
+}
+
+#typewriter .cursor {
+    display: inline-block;
+    width: 0.05em;
+    height: 1.2em;
+    background-color: gray;
+    margin-left: 2.5px;
+    vertical-align: bottom;
+    animation: blink 1s infinite;
+}
+
+.home-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInRight 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.home-image img {
+    width: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-buttons-fixed {
+    display: flex;
+    gap: 25px;
+    margin-top: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    animation: scaleBounce 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    z-index: 10;
+}
+
+.social-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c4a7e7;
+    color: #c4a7e7;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(72, 187, 120, 0.6);
+}
+
+.social-button svg {
+    width: 60%;
+    height: 60%;
+}
+
+.social-button:hover {
+    transform: scale(1.2);
+    background-color: #c4a7e7;
+    color: #232136;
+    box-shadow: 0 0 20px rgba(72, 187, 120, 1);
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+    }
+    .home-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+    .home-image {
+        order: -1;
+        margin: 0;
+        flex: none;
+    }
+    .home-image img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    #typewriter {
+        font-size: 3.7rem;
+    }
+    .home-text p {
+        font-size: 1.3rem;
+    }
+    .social-buttons-fixed {
+        justify-content: center;
+        gap: 25px;
+    }
+}

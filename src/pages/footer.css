@@ -1,0 +1,28 @@
+.footer-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: "IBM Plex Mono", monospace;
+    color: #aaaaaa;
+}
+
+.separator {
+    width: 50%;
+    height: 1px;
+    background-color: #555;
+    margin: 1.5rem auto;
+    border: none;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #c4a7e7;
+}

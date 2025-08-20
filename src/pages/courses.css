@@ -1,0 +1,126 @@
+.courses-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.courses-title {
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #dfdad9;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.term-switch {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.term-switch button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #c4a7e7;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #c4a7e7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.term-switch button.active,
+.term-switch button:hover {
+    background-color: #c4a7e7;
+    color: #232136;
+}
+
+.courses-grid.first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.courses-grid.first .course-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: 180px;
+    box-sizing: border-box;
+}
+
+.courses-grid.second {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.courses-grid.second .course-card {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.course-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #1e1b2f;
+    color: #dfdad9;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: pre-line; /* 允許換行 \n */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(196, 167, 231, 0.3);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid.first,
+    .courses-grid.second {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 1.5rem;
+    }
+
+    .course-card {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        min-height: auto;
+    }
+}
